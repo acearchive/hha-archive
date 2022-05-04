@@ -1,0 +1,3 @@
+[submodule "yg-render"]
+	path = yg-render
+	url = git@github.com:acearchive/yg-render
