@@ -4,7 +4,9 @@ set -e
 
 base_dir="$(realpath "$(dirname "$0")")"
 
-apk add --no-cache go npm
+apk add --no-cache git go npm
+
+git submodule update --init
 
 cd "$base_dir/yg-render/parser"
 go run . -o "$base_dir/output" -t "Haven for the Human Amoeba" "$base_dir/archive"
