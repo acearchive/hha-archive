@@ -6,6 +6,7 @@ base_dir="$(realpath "$(dirname "$0")")"
 
 apk add --no-cache git git-lfs go npm
 
+git lfs fetch
 git lfs checkout
 git submodule update --init
 
