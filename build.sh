@@ -4,8 +4,9 @@ set -e
 
 base_dir="$(realpath "$(dirname "$0")")"
 
-apk add --no-cache git go npm
+apk add --no-cache git git-lfs go npm
 
+git lfs checkout
 git submodule update --init
 
 cd "$base_dir/yg-render/parser"
