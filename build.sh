@@ -1,11 +1,10 @@
-#!/usr/bin/env
+#!/usr/bin/env sh
 
 set -e
 
-base_dir="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
+base_dir="$(realpath "$(dirname "$0")")"
 
-apt-get update
-apt-get install --yes golang npm
+apk add --no-cache go npm
 
 cd "$base_dir/yg-render/parser"
 go run . -o "$base_dir/output" -t "Haven for the Human Amoeba" "$base_dir/archive"
