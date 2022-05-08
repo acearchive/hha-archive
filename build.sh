@@ -1,14 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 
-base_dir="$(realpath "$(dirname "$0")")"
-
-apk add --no-cache git git-lfs go npm
-
-git lfs fetch
-git lfs checkout
-git submodule update --init
+base_dir="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 cd "$base_dir/yg-render/parser"
 go run . -o "$base_dir/output" -t "Haven for the Human Amoeba" "$base_dir/archive"
