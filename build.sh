@@ -4,7 +4,7 @@ set -e
 
 base_dir="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
-cd "$base_dir/yg-render/parser"
+cd "$base_dir/yahoo-groups-reader/parser"
 
 go run . "$base_dir/archive" \
     --output "$base_dir/output" \
@@ -16,6 +16,6 @@ go run . "$base_dir/archive" \
 export OUTPUT_DIR="$base_dir/output"
 export PUBLIC_DIR="$base_dir/public"
 
-cd "$base_dir/yg-render/pipeline"
+cd "$base_dir/yahoo-groups-reader/pipeline"
 npm install
 npx gulp
